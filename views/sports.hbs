@@ -1,0 +1,22 @@
+<h2>Bienvenue sur le site des Jeux olympiques !</h2>
+
+<div class="container-fluid">
+
+    {{#each sports}}
+    <div class="row" style="margin: 5px 20px 5px 20px;">
+        <div class="card" style="width: 100%; max-width: 50rem;">
+            <div class="card-body">
+                 <div style="display:inline;float:right"> <form method="POST" action="/api/sports/{{id}}?_method=DELETE" style="display:inline"><button type="submit" class="btn btn-danger" style="display:inline">Supprimer</button></form></div>
+                <div style="display:inline" class="card-title">{{name}}</div>
+                <div style="display:inline"> <a href="/api/sports/{{id}}/athletes" class="card-link">Voir les athletes</a></div>
+               </div>
+        </div>
+    </div>
+    {{/each}}
+
+
+     <form method="post" action="/api/sports">
+        <label for="tbSport"></label><input name="tbSport" type="text" class="form-control" id="tbSport" style="width:150px;display:inline">
+        <button type="submit" class="btn btn-primary">Ajouter le sport</button>
+    </form>
+</div>

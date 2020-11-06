@@ -1,0 +1,27 @@
+{
+  "name": "tp-jo",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.12",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poignay/TPJeuxOlympique-NodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Poignay/TPJeuxOlympique-NodeJS/issues"
+  },
+  "homepage": "https://github.com/Poignay/TPJeuxOlympique-NodeJS#readme",
+  "description": ""
+}
