@@ -1,5 +1,4 @@
 npm init
-npm install
 npm install express --save
 npm install morgan --save
 npm install hbs --save
