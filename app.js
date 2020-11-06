@@ -16,7 +16,7 @@ app.use(methodOverride('_method'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//app.use('/', athleteRouter);
+app.use('/', athleteRouter);
 app.use('/', sportRouter);
 //app.use('/', utilisateurRouter);
 

@@ -8,7 +8,7 @@ const tweetSchema = new Schema({
     firstName: String, 
     lastName: String,
     gender: Boolean,
-    contry: String
+    country: String
 });
 
 // on créé un model de notre tweet (attention la collection doit être égal au nom de notre model au pluriel !! exemple Nom database tweets, nom dui model tweet)

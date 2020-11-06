@@ -1,0 +1,29 @@
+<h2>Bienvenue sur le site des Jeux olympiques !</h2>
+
+<div class="container-fluid">
+
+    {{#each athletes}}
+    <div class="row" style="margin: 5px 20px 5px 20px;">
+        <div class="card" style="width: 100%; max-width: 50rem;">
+            <div class="card-body">
+                <!--<div style="display:inline;float:right"> <form method="POST" action="/api/sports/{{id}}?_method=DELETE" style="display:inline"><button type="submit" class="btn btn-danger" style="display:inline">Supprimer</button></form></div>
+                -->    
+                <div style="display:inline" class="card-title">{{firstName}}</div>
+                <div style="display:inline" class="card-title">{{lastName}}</div>
+                <div style="display:inline" class="card-title">{{gender}}</div>
+                <div style="display:inline" class="card-title">{{country}}</div>
+                <div style="display:inline"> <a href="/api/athletes/"+{{id}}+"/sports" class="card-link">Voir sports</a></div>
+               </div>
+        </div>
+    </div>
+    {{/each}}
+
+
+     <form method="post" action="/api/athletes">
+        <label for="tbAthleteFirstName">First Name</label><input name="tbAthleteFirstName" type="text" class="form-control" id="tbAthleteFirstName" style="width:150px;display:inline">
+        <label for="tbAthleteLastName">Last Name</label><input name="tbAthleteLastName" type="text" class="form-control" id="tbAthleteLastName" style="width:150px;display:inline">
+        <label for="cbAthleteGender">Gender</label><input name="cbAthleteGender" type="checkbox" class="form-control" id="cbAthleteGender" style="display:inline">
+        <label for="tbAthleteCountry">Country</label><input name="tbAthleteCountry" type="text" class="form-control" id="tbAthleteCountry" style="width:150px;display:inline">        
+        <button type="submit" class="btn btn-primary">Ajouter l'athlete</button>
+    </form>
+</div>
