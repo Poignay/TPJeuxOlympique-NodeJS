@@ -11,8 +11,6 @@ connect();
 const app = express();
 const port = 3000;
 
-const methodOverride = require('method-override')
-app.use(methodOverride('_method'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -27,7 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', (req, res) => {
-  res.render("index");
+  res.render("/api/sports");
 });
 
 app.listen(port, () => {

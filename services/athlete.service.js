@@ -9,7 +9,7 @@ class AthleteService {
             firstName: athlete.tbAthleteFirstName,
             lastName: athlete.tbAthleteLastName,
             gender: gender,
-            country: athlete.tbAthleteCountry
+            country: athlete.sCountry
         });
 
         await created.save();
@@ -27,6 +27,16 @@ class AthleteService {
     async delete(Id) {
         return Athlete.delete({Id : Id})
     };    
+
+    async getBySportId(sport){
+        let athletes = [];
+        for (let athleteSport of sport.athletes){
+            const athleteId = athleteSport._id.toString();
+            const athlete = await Athlete.findById(athleteId).exec();
+            athletes.push(athlete);
+        }
+        return athletes;
+    };
 }
 
 // on n'oublie pas d'exporter notre Service

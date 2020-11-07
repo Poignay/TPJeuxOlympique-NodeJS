@@ -6,6 +6,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script>
+function AthleteSport(){
+    var selectAthlete = document.getElementById('sAthlete');
+    var indexAthlete = selectAthlete.value;
+    var selectSport= document.getElementById('sSport');
+    var indexSport = selectSport.value;
+    var form = document.formAthleteSport;
+    if(indexSport!="" && indexAthlete!=""){
+        form.action = '/api/sports/'+indexSport+'/athletes/'+indexAthlete;
+        form.submit();
+    }else{
+        alert("Il faut choisir un sport et un athlete.");
+    }
+}
+
+function clickGender(){
+    var cbAthleteGender= document.getElementById('cbAthleteGender');
+    var lGender= document.getElementById('lGender');
+    if(cbAthleteGender.checked){
+        lGender.innerText="Male";
+    }else{
+        lGender.innerText="Female";
+    }
+}
+    </script>
 </head>
 
 <body>

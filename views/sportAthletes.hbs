@@ -1,0 +1,32 @@
+<h2>{{sport.name}}</h2>
+
+<div class="container-fluid">
+    {{#if athletesPays}}
+        {{#each athletesPays}}
+        <div class="row" style="margin: 5px 20px 5px 20px;">
+            <div class="card" style="width: 100%; max-width: 50rem;">
+                <div class="card-body"> 
+                    <div style="display:inline" class="card-title">{{firstName}}</div>
+                    <div style="display:inline" class="card-title">{{lastName}}</div>
+                    {{#if gender}}
+                        <div style="display:inline" class="card-title">Male</div>
+                    {{else}}
+                        <div style="display:inline" class="card-title">Female</div>
+                    {{/if}}
+                    <div style="display:inline" class="card-title">{{country}}</div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    
+    {{else}}
+        <div class="row" style="margin: 5px 20px 5px 20px;">
+            <div class="card" style="width: 100%; max-width: 50rem;">
+                <div class="card-body">
+                    <div style="display:inline" class="card-title">Ce sport n'a pas d'athletes</div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+    <button onclick="location.replace('/api/sports')" class="btn btn-primary">Retour</button>
+</div>

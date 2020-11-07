@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
 
-    {{#each athletes}}
+    {{#each athletesPays}}
     <div class="row" style="margin: 5px 20px 5px 20px;">
         <div class="card" style="width: 100%; max-width: 50rem;">
             <div class="card-body">
@@ -12,7 +12,7 @@
                 <div style="display:inline" class="card-title">{{lastName}}</div>
                 <div style="display:inline" class="card-title">{{gender}}</div>
                 <div style="display:inline" class="card-title">{{country}}</div>
-                <div style="display:inline"> <a href="/api/athletes/"+{{id}}+"/sports" class="card-link">Voir sports</a></div>
+                <div style="display:inline"> <a href="/api/athletes/{{id}}/sports" class="card-link">Voir sports</a></div>
                </div>
         </div>
     </div>
@@ -20,10 +20,16 @@
 
 
      <form method="post" action="/api/athletes">
-        <label for="tbAthleteFirstName">First Name</label><input name="tbAthleteFirstName" type="text" class="form-control" id="tbAthleteFirstName" style="width:150px;display:inline">
-        <label for="tbAthleteLastName">Last Name</label><input name="tbAthleteLastName" type="text" class="form-control" id="tbAthleteLastName" style="width:150px;display:inline">
-        <label for="cbAthleteGender">Gender</label><input name="cbAthleteGender" type="checkbox" class="form-control" id="cbAthleteGender" style="display:inline">
-        <label for="tbAthleteCountry">Country</label><input name="tbAthleteCountry" type="text" class="form-control" id="tbAthleteCountry" style="width:150px;display:inline">        
+     <h3>Ajouter un athlète</h3>
+        <label for="tbAthleteFirstName" style="width:80px;">First Name</label><input name="tbAthleteFirstName" type="text" class="form-control" id="tbAthleteFirstName" style="width:150px;display:inline"><br>
+        <label for="tbAthleteLastName" style="width:80px;">Last Name</label><input name="tbAthleteLastName" type="text" class="form-control" id="tbAthleteLastName" style="width:150px;display:inline"><br>
+        <label for="cbAthleteGender" style="width:80px;">Gender</label><input name="cbAthleteGender" type="checkbox" class="form-control" id="cbAthleteGender" style="display:inline;width:30px; vertical-align:middle" onclick="clickGender();"><label id="lGender" name="lGender" >  Female</label><br>
+        <label for="sCountry" style="width:80px;">Country</label>
+        <select id="sCountry"  class="form-control" name="sCountry"  style="width:150px;display:inline" >
+            {{#each codeAphas}}
+                <option value="{{code}}">{{nom}}</option>
+            {{/each}}
+        </select>    
         <button type="submit" class="btn btn-primary">Ajouter l'athlete</button>
     </form>
 </div>

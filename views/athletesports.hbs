@@ -1,5 +1,6 @@
 <div class="container-fluid">
 
+{{#if sports}}
     {{#each sports}}
     <div class="row" style="margin: 5px 20px 5px 20px;">
         <div class="card" style="width: 100%; max-width: 50rem;">
@@ -9,4 +10,14 @@
         </div>
     </div>
     {{/each}}
+{{else}}
+    <div class="row" style="margin: 5px 20px 5px 20px;">
+        <div class="card" style="width: 100%; max-width: 50rem;">
+            <div class="card-body">
+                <div style="display:inline" class="card-title">Cette athletes n'a pas de sport</div>
+               </div>
+        </div>
+    </div>
+{{/if}}
+    <button onclick="location.replace('/api/athletes')" class="btn btn-primary">Retour</button>
 </div>

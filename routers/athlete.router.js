@@ -17,7 +17,7 @@ router.get('/api/athletes', async (req,res)=> {
 })
 
 //Consulter les sports d'un athlète
-router.get('/api/athletes/{athleteId}/sports', async (req,res)=> {
+router.get('/api/athletes/:athleteId/sports', async (req,res)=> {
     athleteController.getAllSportAthlete(req,res);
 })
 
