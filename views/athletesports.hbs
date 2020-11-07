@@ -1,6 +1,14 @@
 <div class="container-fluid">
 
+<label style="width:90px;">First Name :</label>{{athlete.firstName}}<br>
+<label style="width:90px;">Last Name :</label>{{athlete.lastName}}<br>
+<label style="width:90px;">Gender :</label>{{gender}}<br>
+<label style="width:90px;">Country :</label>{{pays}}
+
+<br>
+
 {{#if sports}}
+Liste des sports :
     {{#each sports}}
     <div class="row" style="margin: 5px 20px 5px 20px;">
         <div class="card" style="width: 100%; max-width: 50rem;">

@@ -27,15 +27,25 @@ class AthleteController{
         let athletesPays=[];
         for(let elem of athletes){
             const pays = await this.codeApha2Api.getName(elem.country);
-            athletesPays.push({id: elem._id,firstName: elem.firstName,lastName: elem.lastName,gender: elem.gender,country:  pays})
+            let gender = "Female";
+            if (elem.gender){
+                gender="Male";
+            }
+            athletesPays.push({id: elem._id,firstName: elem.firstName,lastName: elem.lastName,gender: gender,country:  pays})
         }
         res.render("athletes",{athletesPays,codeAphas});
     }
 
     async getAllSportAthlete(req,res){
         const athleteId = req.params.athleteId;
+        const athlete = await this.athleteService.getByAthleteId(athleteId);
         const sports = await this.sportService.getSportbyAthleteId(athleteId);
-        res.render("athletesports",{ athleteId , sports });
+        const pays = await this.codeApha2Api.getName(athlete.country);
+        let gender = "Female";
+        if(athlete.gender){
+            gender="Male";
+        }
+        res.render("athletesports",{ athlete , sports, pays , gender});
     }
 }
 
