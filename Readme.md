@@ -1,5 +1,3 @@
-avec les instructions de prise en main du projet, et avec la checklist des API et des fonctionnalités Web avec un statut des tests (OK ou KO)
-
 Installation:
 
 npm init
@@ -19,6 +17,7 @@ La page sports :
 - Liste les sports OK
 - Créer de nouveau sport OK
 - Lier un sport à un athlète OK
+- Supprimer un sport OK
 
 La page athlètes : 
 - Liste les athlètes OK
