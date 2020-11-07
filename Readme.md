@@ -8,6 +8,8 @@ Installation:
 - npm install mongoose
 - npm install axios
 
+Normalement pas besoin de changer la base de données elle est ouverte.
+
 
 L'api country.js :
 - permet de récupérer  une liste de nom de pays avec leur code Apha2 (getCodeApha2) OK
