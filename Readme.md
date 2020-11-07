@@ -1,12 +1,12 @@
 Installation:
 
-npm init
-npm install express --save
-npm install morgan --save
-npm install hbs --save
-npm install uuid --save
-npm install mongoose
-npm install axios
+- npm init
+- npm install express --save
+- npm install morgan --save
+- npm install hbs --save
+- npm install uuid --save
+- npm install mongoose
+- npm install axios
 
 
 L'api country.js :
